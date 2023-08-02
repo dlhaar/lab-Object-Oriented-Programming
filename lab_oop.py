@@ -5,7 +5,7 @@ class Tv:
 	input_options = ["Anthena", "HDMI1", "HDMI2", "HDMI3"]
 	size_options = [42, 50, 55, 65, 75]
 
-	def __init__(self, on, volume, active_channel, _input, size):
+	def __init__(self, active_channel:int, _input:str, size, on=False, volume=0):
 		self.on = on
 		self.volume = volume 
 		self.active_channel = active_channel
@@ -25,13 +25,13 @@ class Tv:
 			print("TV is already off")
 
 	def set_volume(self, new_volume):
-		if new_volumn in volume_range:
+		if new_volume in volume_range:
 			self.volume = new_volume
 		else:
 			print('Please select a volume value between 0 and 100')
 
 	def change_channel(self, new_channel):
-		if new_channel in active_channel:
+		if new_channel in active_channel_range:
 			self.active_channel = new_channel
 		else:
 			print('Please select a channel between 1 and 10')
